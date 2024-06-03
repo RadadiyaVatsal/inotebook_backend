@@ -8,13 +8,11 @@ const {
   DB_CLUSTER
 } = process.env;
 
-const mongoURI = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_CLUSTER}/`;
-
+const mongoURI = `mongodb+srv://${DB_USERNAME}:${DB_PASSWORD}@${DB_CLUSTER}/${DB_NAME}`;
 
 const connectToMongo = async () => {
-  console.log(mongoURI);
   try {
-    await mongoose.connect(mongoURI);
+    await mongoose.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true });
     console.log("Connected to MongoDB successfully");
   } catch (error) {
     console.error("Error connecting to MongoDB", error);
