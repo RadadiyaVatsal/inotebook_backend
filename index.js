@@ -22,7 +22,7 @@ async function startServer() {
 
   // CORS configuration
   const corsOptions = {
-    origin: 'http://localhost:3000', // Change to your client URL
+    origin: 'https://your-render-frontend-domain.onrender.com', // Update with your frontend domain on Render.com
     methods: 'GET,POST,PUT,DELETE', // Allowed methods
     allowedHeaders: 'Content-Type,Authorization,auth-token', // Allowed headers
   };
